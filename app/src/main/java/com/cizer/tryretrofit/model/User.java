@@ -1,4 +1,4 @@
-package com.cizer.tryretrofit;
+package com.cizer.tryretrofit.model;
 
 import com.google.gson.annotations.SerializedName;
 

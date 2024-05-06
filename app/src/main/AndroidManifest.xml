@@ -15,14 +15,20 @@
         android:theme="@style/Theme.TryRetrofit"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+<!--        <activity android:name=".ProductViewHolder"-->
+
+<!--            />-->
+<!--        <activity-->
+<!--            android:name=".RecyclerV"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".views.viewholder.Login"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".views.viewholder.Register"-->
+<!--            android:exported="false" />-->
         <activity
-            android:name=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".Register"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".RecyclerV"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

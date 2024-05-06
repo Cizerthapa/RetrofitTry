@@ -1,4 +1,11 @@
-package com.cizer.tryretrofit;
+package com.cizer.tryretrofit.utilities;
+
+import com.cizer.tryretrofit.RegisterResponse;
+import com.cizer.tryretrofit.model.LoginUser;
+import com.cizer.tryretrofit.model.ProductLaptop;
+import com.cizer.tryretrofit.model.User;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -13,7 +20,7 @@ public interface RetroApi {
     Call<Object> registerUser(@Body User user);
 
     @POST("login.php")
-    Call<Object> loginUser(@Body  LoginUser user);
+    Call<Object> loginUser(@Body LoginUser user);
     @FormUrlEncoded
     @POST("registernew.php/register")
     Call<RegisterResponse> register(
@@ -22,4 +29,8 @@ public interface RetroApi {
             @Field("key_pass") String pass,
             @Field("key_gender") String gender
     );
+    @GET("product.php")
+    Call<List<ProductLaptop>> getProducts();
+
+
 }

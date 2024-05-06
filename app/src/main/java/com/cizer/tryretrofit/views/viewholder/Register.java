@@ -1,4 +1,4 @@
-package com.cizer.tryretrofit;
+package com.cizer.tryretrofit.views.viewholder;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.cizer.tryretrofit.R;
+import com.cizer.tryretrofit.RegisterResponse;
+import com.cizer.tryretrofit.model.User;
+import com.cizer.tryretrofit.utilities.RetroApi;
 
 import retrofit2.Call;
 import retrofit2.Callback;
