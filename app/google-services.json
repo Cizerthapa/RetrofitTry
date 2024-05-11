@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "258684067630",
+    "project_id": "tryretrofit-e030d",
+    "storage_bucket": "tryretrofit-e030d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258684067630:android:d20bf1a84635719e5a24bf",
+        "android_client_info": {
+          "package_name": "com.cizer.tryretrofit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu7k_EDFZLtmSHLh6zGxS4xT9YkX6DR1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,4 +2,11 @@
     <string name="app_name">TryRetrofit</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lgn">Login</string>
+    <string name="psd">Password</string>
+    <string name="usrnm">Username</string>
+    <string name="default_notification_channel_id">your_notification_channel_id</string>
+    <string name="default_notification_channel_name">CZR Laptops</string>
+    <string name="default_notification_channel_description">Your laptop solution</string>
+
 </resources>

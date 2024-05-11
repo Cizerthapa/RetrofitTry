@@ -19,7 +19,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    private static final String BASE_URL = "http://100.64.218.179/api/";
+    private static final String BASE_URL = "http://10.0.2.2/api/";
     private static final Retrofit retrofit;
 
     // Create the Retrofit instance
