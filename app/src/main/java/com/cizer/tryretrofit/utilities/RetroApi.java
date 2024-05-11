@@ -15,7 +15,6 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface RetroApi {
-
     @POST("register.php")
     Call<Object> registerUser(@Body User user);
 
@@ -31,6 +30,4 @@ public interface RetroApi {
     );
     @GET("product.php")
     Call<List<ProductLaptop>> getProducts();
-
-
 }

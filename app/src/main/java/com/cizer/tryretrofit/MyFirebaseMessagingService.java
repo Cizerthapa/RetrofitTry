@@ -18,7 +18,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // Check if the message contains data
         if (remoteMessage.getData().size() > 0) {
-            Log.d(TAG, "Message data payload: " + remoteMessage.getData());
+            Log.d(TAG, "Message of payload data: " + remoteMessage.getData());
 
             // Handle the data payload here
             // You can access the data payload using remoteMessage.getData()
@@ -26,7 +26,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         // Check if the message contains a notification payload
         if (remoteMessage.getNotification() != null) {
-            Log.d(TAG, "Message notification body: " + remoteMessage.getNotification().getBody());
+            Log.d(TAG, "Message of notification body: " + remoteMessage.getNotification().getBody());
 
             showNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody());
 
@@ -38,7 +38,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onNewToken(String token) {
         // If you need to handle token refresh, override this method
-        Log.d(TAG, "Refreshed token: " + token);
+        Log.d(TAG, "Here is Refreshed token: " + token);
     }
 
     private void showNotification(String title, String message) {
@@ -50,8 +50,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        // Create the NotificationChannel, but only on API 26+ because
-        // the NotificationChannel class is new and not in the support library
+        // Make NotificationChannel, but only on API 26 or above because
+        // NotificationChannel class is very new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "channel_name";
             String description = "channel_description";

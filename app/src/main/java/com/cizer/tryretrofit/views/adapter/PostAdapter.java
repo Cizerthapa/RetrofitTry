@@ -16,10 +16,10 @@ import java.util.ArrayList;
 
 public class PostAdapter extends RecyclerView.Adapter<ProductViewHolder> {
 
-    private final ArrayList<ProductLaptop> products;
+    private final ArrayList<ProductLaptop> laptopProducts;
 
-    public PostAdapter(ArrayList<ProductLaptop> products) {
-        this.products = products;
+    public PostAdapter(ArrayList<ProductLaptop> laptopProducts) {
+        this.laptopProducts = laptopProducts;
     }
 
     @NonNull
@@ -31,7 +31,7 @@ public class PostAdapter extends RecyclerView.Adapter<ProductViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-        ProductLaptop product = products.get(position);
+        ProductLaptop product = laptopProducts.get(position);
         holder.textViewName.setText(product.getProductName());
         holder.textViewPrice.setText(product.getProductPrice());
 
@@ -45,6 +45,6 @@ public class PostAdapter extends RecyclerView.Adapter<ProductViewHolder> {
 
     @Override
     public int getItemCount() {
-        return products.size();
+        return laptopProducts.size();
     }
 }

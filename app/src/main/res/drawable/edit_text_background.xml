@@ -1,0 +1,12 @@
+<!-- drawable/simple_box.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:shape="rectangle"
+    tools:ignore="ExtraText">
+    <solid android:color="@color/background_color"/>
+    <stroke
+        android:width="@dimen/border_width"
+        android:color="@color/border_color"/>
+    <corners android:radius="@dimen/corner_radius"/>
+</shape>
+

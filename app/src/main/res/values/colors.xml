@@ -5,4 +5,6 @@
     <color name="DarkBlue">#00008B</color>
     <color name="grey">#918983</color>
     <color name="voilet">#bd2e96</color>
+    <color name="background_color">#FFFFFF</color>
+    <color name="border_color">#000000</color>
 </resources>
