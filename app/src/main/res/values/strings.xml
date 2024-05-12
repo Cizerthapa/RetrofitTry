@@ -8,6 +8,9 @@
     <string name="default_notification_channel_id">your_notification_channel_id</string>
     <string name="default_notification_channel_name">CZR Laptops</string>
     <string name="default_notification_channel_description">Your laptop solution</string>
-    <string name="vw_prods">View Products</string>
+    <string name="vw_prods">View Laptops</string>
+    <string name="ourstry">With fingertips poised, consumers explore, Navigating through options galore. From gaming rigs with neon glow, To ultrabooks fit for on-the-go.</string>
+    <string name="ourmoto">Get the best from us</string>
+    <string name="newarr">New arrivals</string>
 
 </resources>

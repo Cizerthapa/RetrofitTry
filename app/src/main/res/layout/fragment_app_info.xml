@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppInfo"
+    android:backgroundTint="@color/black">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageViewlaptop"
+        android:layout_width="481dp"
+        android:layout_height="583dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/laptop" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/textViewNm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Our Story"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center|top"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Profile Email -->
+
+
+    <!-- Profile Bio -->
+    <TextView
+        android:id="@+id/textViewusstory"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_height="125dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="@string/ourstry"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewark"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="190dp"
+        android:layout_height="125dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="@string/ourmoto"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:layout_marginTop="565dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/blck"
+        />
+</FrameLayout>

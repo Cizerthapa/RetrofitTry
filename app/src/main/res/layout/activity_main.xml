@@ -5,14 +5,39 @@
     android:layout_height="match_parent"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:background="@drawable/mainbg"
+    >
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:text="@string/newarr"
+        />
+    <ImageView
+     android:layout_width="290dp"
+     android:layout_height="300dp"
+     android:src="@drawable/mac"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:text="Find your new Laptop"
+        />
     <Button
         android:id="@+id/btnViewProducts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:text="@string/vw_prods"
         android:onClick="openProductsPage" />
+
     <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
