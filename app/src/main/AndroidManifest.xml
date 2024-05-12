@@ -34,7 +34,7 @@
         <!-- Add your activity declarations here -->
 
         <!-- Example: -->
-        <!--
+
         <activity
             android:name=".ProductViewHolder"
             android:exported="false" />
@@ -44,14 +44,13 @@
         <activity
             android:name=".views.viewholder.Login"
             android:exported="false" />
-        <activity
-            android:name=".views.viewholder.Register"
-            android:exported="false" />
-        -->
+<!--        <activity-->
+<!--            android:name=".views.viewholder.Register"-->
+<!--            android:exported="true" />-->
 
         <!-- Launcher Activity -->
         <activity
-            android:name=".RecyclerV"
+            android:name=".views.viewholder.Register"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

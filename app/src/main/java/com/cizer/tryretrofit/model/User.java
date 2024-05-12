@@ -3,54 +3,54 @@ package com.cizer.tryretrofit.model;
 import com.google.gson.annotations.SerializedName;
 
 public class User {
-        @SerializedName("full_name")
-        private String fullName;
+        @SerializedName("name")
+        private String name1;
 
-        @SerializedName("user_name")
-        private String userName;
+        @SerializedName("gender")
+        private String gender1;
 
         @SerializedName("email")
-        private String email;
+        private String email1;
 
         @SerializedName("password")
-        private String password;
+        private String password1;
 
-        public User(String fullName, String userName, String email, String password) {
-            this.fullName = fullName;
-            this.userName = userName;
-            this.email = email;
-            this.password = password;
+        public User( String name1,String gender1, String email1, String pass1){
+            this.name1 = name1;
+            this.email1 = email1;
+            this.password1 = pass1;
+            this.gender1 = gender1;
         }
 
-        public String getFullName() {
-            return fullName;
-        }
+    public String getName1() {
+        return name1;
+    }
 
-        public void setFullName(String fullName) {
-            this.fullName = fullName;
-        }
+    public void setName1(String name1) {
+        this.name1 = name1;
+    }
 
-        public String getUserName() {
-            return userName;
-        }
+    public String getGender1() {
+        return gender1;
+    }
 
-        public void setUserName(String userName) {
-            this.userName = userName;
-        }
+    public void setGender1(String gender1) {
+        this.gender1 = gender1;
+    }
 
-        public String getEmail() {
-            return email;
-        }
+    public String getEmail1() {
+        return email1;
+    }
 
-        public void setEmail(String email) {
-            this.email = email;
-        }
+    public void setEmail1(String email1) {
+        this.email1 = email1;
+    }
 
-        public String getPassword() {
-            return password;
-        }
+    public String getPassword1() {
+        return password1;
+    }
 
-        public void setPassword(String password) {
-            this.password = password;
-        }
+    public void setPassword1(String password1) {
+        this.password1 = password1;
+    }
 }

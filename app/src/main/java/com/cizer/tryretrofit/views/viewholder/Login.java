@@ -1,9 +1,11 @@
 package com.cizer.tryretrofit.views.viewholder;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +26,15 @@ public class Login extends AppCompatActivity {
         usernameEditText = findViewById(R.id.et_username);
         passwordEditText = findViewById(R.id.et_password);
         Button loginButton = findViewById(R.id.btn_login);
+        TextView signInText = findViewById(R.id.signUpText);
+
+        signInText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, Register.class));
+            }
+        });
+
 
         // Set OnClickListener on the login button
         loginButton.setOnClickListener(new View.OnClickListener() {

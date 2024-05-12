@@ -20,6 +20,7 @@ public interface RetroApi {
 
     @POST("login.php")
     Call<Object> loginUser(@Body LoginUser user);
+
     @FormUrlEncoded
     @POST("registernew.php/register")
     Call<RegisterResponse> register(

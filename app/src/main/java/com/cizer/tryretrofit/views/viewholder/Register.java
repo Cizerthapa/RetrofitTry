@@ -1,5 +1,6 @@
 package com.cizer.tryretrofit.views.viewholder;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,10 +13,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.cizer.tryretrofit.MainActivity;
 import com.cizer.tryretrofit.R;
 import com.cizer.tryretrofit.RegisterResponse;
 import com.cizer.tryretrofit.model.User;
 import com.cizer.tryretrofit.utilities.RetroApi;
+
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -50,7 +54,7 @@ public class Register extends AppCompatActivity {
         String pass1 = reg_password.getText().toString();
         String gender1 = reg_gender.getText().toString();
 
-        User u = new User(name1, email1, pass1, gender1);
+        User u = new User(name1,gender1, email1, pass1);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://10.0.2.2/api/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -65,6 +69,7 @@ public class Register extends AppCompatActivity {
                     // Extract response body and handle it accordingly
                     Toast.makeText(Register.this, "this registered", Toast.LENGTH_SHORT).show();
                     handleResponse(response.body());
+                    startActivity(new Intent(Register.this, Login.class));
                 } else {
                     Toast.makeText(Register.this, "Failed to register", Toast.LENGTH_SHORT).show();
                 }
@@ -73,6 +78,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onFailure(Call<Object> call, Throwable t) {
                 Toast.makeText(Register.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("Fail reason", Objects.requireNonNull(t.getMessage()));
             }
         });
     }
