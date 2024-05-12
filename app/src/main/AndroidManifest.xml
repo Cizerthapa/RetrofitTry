@@ -42,15 +42,12 @@
             android:name=".RecyclerV"
             android:exported="false" />
         <activity
-            android:name=".views.viewholder.Login"
+            android:name=".views.viewholder.Register"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".views.viewholder.Register"-->
-<!--            android:exported="true" />-->
 
         <!-- Launcher Activity -->
         <activity
-            android:name=".views.viewholder.Register"
+            android:name=".views.viewholder.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

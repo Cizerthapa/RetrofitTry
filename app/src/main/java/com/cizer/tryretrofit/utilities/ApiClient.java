@@ -1,11 +1,16 @@
 package com.cizer.tryretrofit.utilities;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.cizer.tryretrofit.MainActivity;
+import com.cizer.tryretrofit.RecyclerV;
 import com.cizer.tryretrofit.model.LoginUser;
 import com.cizer.tryretrofit.model.ProductLaptop;
 
@@ -44,10 +49,11 @@ public class ApiClient {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(context, "User registered successfully", Toast.LENGTH_SHORT).show();
-                    Log.d("ApiClient", "User registration successful");
+                    Toast.makeText(context, "User Login successfully", Toast.LENGTH_SHORT).show();
+                    Log.d("ApiClient", "User Login successful");
                     // Optionally, you can navigate to another activity upon successful registration
-                    // startActivity(new Intent(context, MainActivity.class));
+                    Intent intent = new Intent(context, RecyclerV.class);
+                    context.startActivity(intent);
                 } else {
                     // Display error message to the user
                     Toast.makeText(context, "Failed to login user. Please try again later.", Toast.LENGTH_SHORT).show();
