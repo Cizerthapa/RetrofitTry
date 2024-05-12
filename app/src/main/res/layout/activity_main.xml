@@ -7,31 +7,13 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:onClick="openRegisterActivity"/>
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:onClick="openLoginActivity"/>
     <Button
         android:id="@+id/btnViewProducts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Products"
+        android:text="@string/vw_prods"
         android:onClick="openProductsPage" />
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -40,10 +41,18 @@ public class Register extends AppCompatActivity {
         reg_email = findViewById(R.id.reg_email);
         reg_password = findViewById(R.id.reg_password);
         reg_gender = findViewById(R.id.reg_gender);
+
+        TextView alreadyhaveAcc = findViewById(R.id.alreadyHaveaccText);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        alreadyhaveAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Register.this, Login.class));
+            }
         });
     }
 

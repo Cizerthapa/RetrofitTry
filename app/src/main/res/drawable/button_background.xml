@@ -3,6 +3,7 @@
     <solid android:color="@color/background_color"/>
     <stroke
         android:width="@dimen/border_width"
-        android:color="@color/border_color"/>
+        android:color="@color/border_color"
+        />
     <corners android:radius="10dp" /> <!-- Add this line to make the corners rounded -->
 </shape>

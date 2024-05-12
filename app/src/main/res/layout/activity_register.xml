@@ -6,16 +6,30 @@
     android:id="@+id/main"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/bg"
+    >
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="Register"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
 
     <EditText
-        android:layout_marginTop="225dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/reg_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/edit_text_background"
         android:hint="Enter Email"
+        android:textColorHint="@color/DarkBlue"
+        android:textColor="@color/black"
         android:padding="12dp" />
 
     <EditText
@@ -23,7 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:background="@drawable/edit_text_background"
+        android:textColorHint="@color/DarkBlue"
+        android:textColor="@color/black"
         android:hint="Enter Name"
         android:padding="12dp" />
 
@@ -32,7 +47,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:background="@drawable/edit_text_background"
+        android:textColorHint="@color/DarkBlue"
+        android:textColor="@color/black"
         android:hint="Enter Gender"
         android:padding="12dp" />
 
@@ -41,7 +57,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="22dp"
-        android:background="@drawable/edit_text_background"
+        android:textColorHint="@color/DarkBlue"
+        android:textColor="@color/black"
         android:hint="Enter Password"
         android:padding="12dp" />
 
@@ -49,13 +66,21 @@
         android:id="@+id/reg_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
         android:onClick="register"
         android:paddingStart="24dp"
         android:paddingTop="12dp"
         android:paddingEnd="24dp"
         android:paddingBottom="12dp"
         android:text="Register"
-        android:textColor="#ffffff" />
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:backgroundTint="@color/DarkBlue"
+        android:textColor="@color/grey" />
+    <TextView
+        android:id="@+id/alreadyHaveaccText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already Have an account?"
+        android:textColor="@color/voilet" />
 
 </LinearLayout>
