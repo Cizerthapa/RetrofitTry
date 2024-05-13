@@ -1,10 +1,13 @@
 package com.cizer.tryretrofit;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,60 +18,56 @@ import com.cizer.tryretrofit.utilities.ApiClient;
 import com.cizer.tryretrofit.views.adapter.PostAdapter;
 import com.cizer.tryretrofit.views.viewholder.Login;
 import com.cizer.tryretrofit.views.viewholder.Register;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    private PostAdapter adapter;
-    private ArrayList<ProductLaptop> products = new ArrayList<>();
+public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+
+
+    BottomNavigationView bottomNavigationView;
+    Homefrag homeFragment = new Homefrag();
+    //    ProfileFragment profileFragment = new ProfileFragment();
+
+    AppInfo appInfo = new AppInfo();
+
+    ProductFragment productFragment = new ProductFragment();
+    //    HobbiesFragment hobbiesFragment = new HobbiesFragment();
+    Contactfrag contactFragment = new Contactfrag();
+
+    Profilefragment pf = new Profilefragment();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_v);
-
-        // Initialize Firebase Cloud Messaging
-        FirebaseMessaging.getInstance().subscribeToTopic("all");
-
-        RecyclerView recyclerView = findViewById(R.id.rvPosts);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new PostAdapter(products);
-        recyclerView.setAdapter(adapter);
-
-        ApiClient apiClient = new ApiClient();
-        apiClient.getProducts(new ApiCallback() {
-            @Override
-            public void onSuccess(ArrayList<ProductLaptop> productList) {
-                products.clear();
-                products.addAll(productList);
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onFailure(String message) {
-                // Handle failure
-            }
-        });
+//        setContentView(R.layout.fragment_home_screen);
+        setContentView(R.layout.activity_main);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(this);
+        bottomNavigationView.setSelectedItemId(R.id.homeItem);
     }
-
-    // Handle FCM message received
     @Override
-    public void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        if (intent.getExtras() != null && intent.getExtras().containsKey("data")) {
-            String data = intent.getStringExtra("data");
-            Log.d("FCM", "Received data: " + data);
-            // Process the received data as needed
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.homeItem) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+            return true;
+        }else if(item.getItemId() == R.id.profileItem){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, productFragment).commit();
+            return true;
+        }else if(item.getItemId() == R.id.skillItem){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, contactFragment).commit();
+            return true;
+        }else if(item.getItemId() == R.id.cvItem) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, appInfo).commit();
+            return true;
+        }else if(item.getItemId() == R.id.pfItem) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, pf).commit();
+            return true;
+        } else {
+            return false;
         }
-    }
-
-    //navigate to another activity
-    public void openRegisterActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Register.class));
-    }
-
-    public void openLoginActivity(View view) {
-        startActivity(new Intent(MainActivity.this, Login.class));
     }
 }

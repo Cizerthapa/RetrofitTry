@@ -12,5 +12,33 @@
     <string name="ourstry">With fingertips poised, consumers explore, Navigating through options galore. From gaming rigs with neon glow, To ultrabooks fit for on-the-go.</string>
     <string name="ourmoto">Get the best from us</string>
     <string name="newarr">New arrivals</string>
+    <string name="todo">TODO</string>
+
+    <string name="pfl">Profile</string>
+    <string name="chgpflpc">Change profile picture</string>
+    <string name="wlc">Welcome</string>
+    <string name="ativittype">Currenlty student at Islington College</string>
+    <string name="age">Age</string>
+    <string name="_21">21</string>
+    <string name="gender">gender</string>
+    <string name="male">Male</string>
+    <string name="current_activity">Current Activity</string>
+    <string name="cizer_thapa">Cizer Thapa,</string>
+    <string name="skl">Skills</string>
+    <string name="timmngnt">Time Management</string>
+    <string name="communi">Communication</string>
+    <string name="pskill">Programming Skills</string>
+    <string name="jslang">JavaScript\nLanguage</string>
+    <string name="dbsql">Database SQL</string>
+    <string name="java">Java language</string>
+    <string name="netbeans_idep">NetBeans IDE proficiency</string>
+    <string name="skills_impression">Skills can be a great impression!</string>
+    <string name="network_people">Network with the Right People!</string>
+    <string name="hme">Home</string>
+    <string name="dobtxt">Date of Birth</string>
+    <string name="dobdatas">28th Nov 2002</string>
+    <string name="eml">Email</string>
+    <string name="emldata">cizer@gmail.com</string>
+    <string name="stimg">Set Image</string>
 
 </resources>

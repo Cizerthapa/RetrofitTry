@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeItem"
+        android:title=""
+        android:icon="@drawable/ic_home_foreground"
+        />
+    <item
+        android:id="@+id/profileItem"
+        android:title=""
+        android:icon="@drawable/ic_person_foreground"
+
+        />
+    <item
+        android:id="@+id/skillItem"
+        android:title=""
+        android:icon="@drawable/ic_skill_foreground"
+        />
+    <item
+        android:id="@+id/cvItem"
+        android:title=""
+        android:icon="@drawable/ic_contact_foreground"
+        />
+    <item
+        android:id="@+id/pfItem"
+        android:title=""
+        android:icon="@drawable/ic_contact_foreground"
+        />
+</menu>

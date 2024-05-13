@@ -34,13 +34,10 @@
         <!-- Add your activity declarations here -->
 
         <!-- Example: -->
+        <activity android:name=".MainActivity"
+        android:exported="false" />
 
-        <activity
-            android:name=".ProductViewHolder"
-            android:exported="false" />
-        <activity
-            android:name=".RecyclerV"
-            android:exported="false" />
+
         <activity
             android:name=".views.viewholder.Register"
             android:exported="false" />

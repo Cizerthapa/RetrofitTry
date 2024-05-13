@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.cizer.tryretrofit.Homefrag;
 import com.cizer.tryretrofit.MainActivity;
 import com.cizer.tryretrofit.RecyclerV;
 import com.cizer.tryretrofit.model.LoginUser;
@@ -49,11 +50,12 @@ public class ApiClient {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
                 if (response.isSuccessful()) {
+                    Intent intent = new Intent(context, MainActivity.class);
+                    context.startActivity(intent);
                     Toast.makeText(context, "User Login successfully", Toast.LENGTH_SHORT).show();
                     Log.d("ApiClient", "User Login successful");
                     // Optionally, you can navigate to another activity upon successful registration
-                    Intent intent = new Intent(context, RecyclerV.class);
-                    context.startActivity(intent);
+
                 } else {
                     // Display error message to the user
                     Toast.makeText(context, "Failed to login user. Please try again later.", Toast.LENGTH_SHORT).show();
@@ -77,10 +79,10 @@ public class ApiClient {
                 if (response.isSuccessful()) {
                     ArrayList<ProductLaptop> products = new ArrayList<>(response.body());
                     callback.onSuccess(products);
-                    Log.d("GET_PRODUCTS_SUCCESS", "Products received: " + products);
+                    Log.d("GETTING_PRODUCTS_SUCCESS", "Products received: " + products);
 
                 } else {
-                    callback.onFailure("Failed to get products. Response code: " + response.code());
+                    callback.onFailure("Failed_getting_products. Response code: " + response.code());
                 }
             }
 

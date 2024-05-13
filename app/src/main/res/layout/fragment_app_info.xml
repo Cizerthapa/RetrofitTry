@@ -58,9 +58,15 @@
         android:textSize="18sp" />
 
     <ImageView
-        android:layout_marginTop="565dp"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="560dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
         android:src="@drawable/blck"
         />
+    <ImageView
+        android:layout_marginTop="625dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:src="@drawable/blck"
+        android:contentDescription="@string/todo" />
 </FrameLayout>

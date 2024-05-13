@@ -8,4 +8,11 @@
     <color name="background_color">#FFFFFF</color>
     <color name="border_color">#000000</color>
     <color name="bg">#fffeff</color>
+    <color name="icon">#00c1cb</color>
+    <color name="iconText">#00d8fc</color>
+    <color name="hobbyclr">#fbfbfb</color>
+    <color name="lghtgry">#D3D3D3</color>
+    <color name="drkgry">#555555</color>
+    <color name="hide">#caebfe</color>
+    <color name="drkthm">#121212</color>
 </resources>
