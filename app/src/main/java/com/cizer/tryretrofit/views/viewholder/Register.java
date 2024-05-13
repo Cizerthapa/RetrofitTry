@@ -71,7 +71,7 @@ public class Register extends AppCompatActivity {
 
         RetroApi retrofitapi = retrofit.create(RetroApi.class);
 
-        retrofitapi.registerUser(u).enqueue(new Callback<Object>() {
+        retrofitapi.userRegister(u).enqueue(new Callback<Object>() {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
                 if (response.isSuccessful()) {

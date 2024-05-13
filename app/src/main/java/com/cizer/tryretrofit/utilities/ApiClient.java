@@ -49,7 +49,7 @@ public class ApiClient {
         // Get the ApiService instance
 
         // Call the loginUser method in ApiService and pass the user object
-        apiService.loginUser(user).enqueue(new Callback<Object>() {
+        apiService.userLogin(user).enqueue(new Callback<Object>() {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
                 if (response.isSuccessful()) {
@@ -75,7 +75,7 @@ public class ApiClient {
         });
     }
     public void getProducts(ApiCallback callback) {
-        Call<List<ProductLaptop>> call = createApiService().getProducts();
+        Call<List<ProductLaptop>> call = createApiService().getLaptops();
         call.enqueue(new Callback<List<ProductLaptop>>() {
             @Override
             public void onResponse(@NonNull Call<List<ProductLaptop>> call, @NonNull Response<List<ProductLaptop>> response) {

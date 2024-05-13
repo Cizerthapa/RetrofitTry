@@ -1,40 +1,24 @@
 package com.cizer.tryretrofit;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.cizer.tryretrofit.model.ProductLaptop;
-import com.cizer.tryretrofit.utilities.ApiCallback;
-import com.cizer.tryretrofit.utilities.ApiClient;
-import com.cizer.tryretrofit.views.adapter.PostAdapter;
-import com.cizer.tryretrofit.views.viewholder.Login;
-import com.cizer.tryretrofit.views.viewholder.Register;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.firebase.messaging.FirebaseMessaging;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
-
     BottomNavigationView bottomNavigationView;
+
     Homefrag homeFragment = new Homefrag();
-    //    ProfileFragment profileFragment = new ProfileFragment();
 
     AppInfo appInfo = new AppInfo();
 
     ProductFragment productFragment = new ProductFragment();
-    //    HobbiesFragment hobbiesFragment = new HobbiesFragment();
+
     Contactfrag contactFragment = new Contactfrag();
 
     Profilefragment pf = new Profilefragment();

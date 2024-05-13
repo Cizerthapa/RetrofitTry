@@ -17,13 +17,13 @@ import retrofit2.http.POST;
 
 public interface RetroApi {
     @POST("register.php")
-    Call<Object> registerUser(@Body User user);
+    Call<Object> userRegister(@Body User user);
 
     @POST("login.php")
-    Call<Object> loginUser(@Body LoginUser user);
+    Call<Object> userLogin(@Body LoginUser user);
 
     @GET("product.php")
-    Call<List<ProductLaptop>> getProducts();
+    Call<List<ProductLaptop>> getLaptops();
 
     @POST("contactus.php")
     Call<Object> sendMessage(@Body ContactInfo contactInfo);
