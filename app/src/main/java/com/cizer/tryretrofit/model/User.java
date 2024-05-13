@@ -3,24 +3,25 @@ package com.cizer.tryretrofit.model;
 import com.google.gson.annotations.SerializedName;
 
 public class User {
-        @SerializedName("name")
-        private String name1;
 
-        @SerializedName("gender")
-        private String gender1;
+    @SerializedName("name")
+    private String name1;
 
-        @SerializedName("email")
-        private String email1;
+    @SerializedName("gender")
+    private String gender1;
 
-        @SerializedName("password")
-        private String password1;
+    @SerializedName("email")
+    private String email1;
 
-        public User( String name1,String gender1, String email1, String pass1){
-            this.name1 = name1;
-            this.email1 = email1;
-            this.password1 = pass1;
-            this.gender1 = gender1;
-        }
+    @SerializedName("password")
+    private String password1;
+
+    public User( String name1,String gender1, String email1, String pass1){
+        this.name1 = name1;
+        this.email1 = email1;
+        this.password1 = pass1;
+        this.gender1 = gender1;
+    }
 
     public String getName1() {
         return name1;

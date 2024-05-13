@@ -1,6 +1,7 @@
 package com.cizer.tryretrofit.utilities;
 
 import com.cizer.tryretrofit.RegisterResponse;
+import com.cizer.tryretrofit.model.ContactInfo;
 import com.cizer.tryretrofit.model.LoginUser;
 import com.cizer.tryretrofit.model.ProductLaptop;
 import com.cizer.tryretrofit.model.User;
@@ -21,14 +22,9 @@ public interface RetroApi {
     @POST("login.php")
     Call<Object> loginUser(@Body LoginUser user);
 
-    @FormUrlEncoded
-    @POST("registernew.php/register")
-    Call<RegisterResponse> register(
-            @Field("key_name") String name,
-            @Field("key_email") String email,
-            @Field("key_pass") String pass,
-            @Field("key_gender") String gender
-    );
     @GET("product.php")
     Call<List<ProductLaptop>> getProducts();
+
+    @POST("contactus.php")
+    Call<Object> sendMessage(@Body ContactInfo contactInfo);
 }

@@ -12,9 +12,12 @@ import androidx.annotation.NonNull;
 import com.cizer.tryretrofit.Homefrag;
 import com.cizer.tryretrofit.MainActivity;
 import com.cizer.tryretrofit.RecyclerV;
+import com.cizer.tryretrofit.model.ContactInfo;
 import com.cizer.tryretrofit.model.LoginUser;
 import com.cizer.tryretrofit.model.ProductLaptop;
+import com.cizer.tryretrofit.model.User;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,6 +92,44 @@ public class ApiClient {
             @Override
             public void onFailure(Call<List<ProductLaptop>> call, Throwable t) {
                 callback.onFailure("Failed to get products: " + t.getMessage());
+            }
+        });
+    }
+    public void sendMessage(String name, String email, String message, Context context) {
+        // Create a ContactInfo object with the provided data
+        ContactInfo contactInfo = new ContactInfo(name, email, message);
+
+        // Get the ApiService instance
+        RetroApi apiService = createApiService();
+
+        // Call the sendMessage method in ApiService and pass the ContactInfo object
+        apiService.sendMessage(contactInfo).enqueue(new Callback<Object>() {
+            @Override
+            public void onResponse(Call<Object> call, Response<Object> response) {
+                if (response.isSuccessful()) {
+                    // Handle successful response
+                    Toast.makeText(context, "Message sent successfully", Toast.LENGTH_SHORT).show();
+                    Log.d("ApiClient", "Message sent successfully");
+                } else {
+                    // Handle unsuccessful response
+                    String errorMessage = "Failed to send message. Response code: " + response.code();
+                    if (response.errorBody() != null) {
+                        try {
+                            errorMessage += "\nError Body: " + response.errorBody().string();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+                    Log.e("ApiClient", errorMessage);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+                // Message sending failed due to network error or other issues
+                Toast.makeText(context, "Failed to send message. Please try again later.", Toast.LENGTH_SHORT).show();
+                Log.e("ApiClient", "Failed to send message: " + t.getMessage());
             }
         });
     }
