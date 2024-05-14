@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Permissions -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-
-    <!-- Meta-data for Firebase Cloud Messaging -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Meta-data for Firebase Cloud Messaging -->
     <meta-data
         android:name="com.google.firebase.messaging.default_notification_channel_id"
-        android:value="notification"/>
+        android:value="notification" />
     <meta-data
         android:name="com.google.firebase.messaging.default_notification_icon"
         android:resource="@drawable/logo" />
@@ -24,35 +21,33 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.TryRetrofit"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".views.viewholder.Login"
+            android:exported="false" />
 
         <!-- Activities -->
         <!-- Add your activity declarations here -->
-
         <!-- Example: -->
-        <activity android:name=".MainActivity"
-        android:exported="false" />
-
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".views.viewholder.Register"
-            android:exported="false" />
-
-        <!-- Launcher Activity -->
+            android:exported="false" /> <!-- Launcher Activity -->
         <activity
-            android:name=".views.viewholder.Login"
+            android:name="SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Firebase Messaging Service -->
+        </activity> <!-- Firebase Messaging Service -->
         <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">
@@ -61,4 +56,5 @@
             </intent-filter>
         </service>
     </application>
+
 </manifest>

@@ -63,6 +63,9 @@ public class Register extends AppCompatActivity {
         String pass1 = reg_password.getText().toString();
         String gender1 = reg_gender.getText().toString();
 
+        if(name1.isEmpty()||email1.isEmpty()||pass1.isEmpty()||gender1.isEmpty()){
+            Toast.makeText(getApplicationContext(), "Please fill in the details", Toast.LENGTH_SHORT).show();
+        } else {
         User u = new User(name1,gender1, email1, pass1);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://10.0.2.2/api/")
@@ -90,7 +93,7 @@ public class Register extends AppCompatActivity {
                 Log.d("Fail reason", Objects.requireNonNull(t.getMessage()));
             }
         });
-    }
+    }}
 
     private void handleResponse(Object responseBody) {
         if (responseBody instanceof RegisterResponse) {
@@ -107,7 +110,7 @@ public class Register extends AppCompatActivity {
                 Toast.makeText(Register.this, "Registration failed: " + registerResponse.getError(), Toast.LENGTH_SHORT).show();
             }
         } else {
-            //Toast.makeText(Register.this, "Unexpected response format", Toast.LENGTH_SHORT).show();
+            // "Unexpected response format"
         }
     }
 }

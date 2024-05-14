@@ -80,18 +80,18 @@ public class ApiClient {
             @Override
             public void onResponse(@NonNull Call<List<ProductLaptop>> call, @NonNull Response<List<ProductLaptop>> response) {
                 if (response.isSuccessful()) {
-                    ArrayList<ProductLaptop> products = new ArrayList<>(response.body());
-                    callback.onSuccess(products);
-                    Log.d("GETTING_PRODUCTS_SUCCESS", "Products received: " + products);
+                    ArrayList<ProductLaptop> laptops = new ArrayList<>(response.body());
+                    callback.onComplete(laptops);
+                    Log.d("GETTING_PRODUCTS_SUCCESS", "Products received: " + laptops);
 
                 } else {
-                    callback.onFailure("Failed_getting_products. Response code: " + response.code());
+                    callback.onFailure("Failed_getting_laptops. Response code: " + response.code());
                 }
             }
 
             @Override
             public void onFailure(Call<List<ProductLaptop>> call, Throwable t) {
-                callback.onFailure("Failed to get products: " + t.getMessage());
+                callback.onFailure("Failed to get laptops: " + t.getMessage());
             }
         });
     }
@@ -108,26 +108,26 @@ public class ApiClient {
             public void onResponse(Call<Object> call, Response<Object> response) {
                 if (response.isSuccessful()) {
                     // Handle successful response
-                    Toast.makeText(context, "Message sent successfully", Toast.LENGTH_SHORT).show();
-                    Log.d("ApiClient", "Message sent successfully");
+                    Toast.makeText(context, "Script sent successfully", Toast.LENGTH_SHORT).show();
+                    Log.d("ApiClient", "Script sent successfully");
                 } else {
                     // Handle unsuccessful response
-                    String errorMessage = "Failed to send message. Response code: " + response.code();
+                    String errorScript = "Failed to send message. Response code: " + response.code();
                     if (response.errorBody() != null) {
                         try {
-                            errorMessage += "\nError Body: " + response.errorBody().string();
+                            errorScript += "\nError Body: " + response.errorBody().string();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
-                    Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
-                    Log.e("ApiClient", errorMessage);
+                    Toast.makeText(context, errorScript, Toast.LENGTH_SHORT).show();
+                    Log.e("ApiClient", errorScript);
                 }
             }
 
             @Override
             public void onFailure(Call<Object> call, Throwable t) {
-                // Message sending failed due to network error or other issues
+                // Script sending failed due to network error or other issues
                 Toast.makeText(context, "Failed to send message. Please try again later.", Toast.LENGTH_SHORT).show();
                 Log.e("ApiClient", "Failed to send message: " + t.getMessage());
             }

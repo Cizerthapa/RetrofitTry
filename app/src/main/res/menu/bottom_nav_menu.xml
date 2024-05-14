@@ -8,18 +8,17 @@
     <item
         android:id="@+id/profileItem"
         android:title=""
-        android:icon="@drawable/ic_person_foreground"
-
+        android:icon="@drawable/baseline_airplay_24"
         />
     <item
         android:id="@+id/skillItem"
         android:title=""
-        android:icon="@drawable/ic_skill_foreground"
+        android:icon="@drawable/baseline_contactus"
         />
     <item
         android:id="@+id/cvItem"
         android:title=""
-        android:icon="@drawable/ic_contact_foreground"
+        android:icon="@drawable/baseline_story"
         />
     <item
         android:id="@+id/pfItem"

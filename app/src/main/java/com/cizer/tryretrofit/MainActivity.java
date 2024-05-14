@@ -23,11 +23,9 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
     Profilefragment pf = new Profilefragment();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.fragment_home_screen);
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(this);

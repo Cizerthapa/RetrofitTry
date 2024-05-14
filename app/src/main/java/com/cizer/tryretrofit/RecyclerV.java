@@ -20,8 +20,8 @@ import java.util.ArrayList;
 
 public class RecyclerV extends AppCompatActivity {
 
-    private PostAdapter adapter;
-    private ArrayList<ProductLaptop> products = new ArrayList<>();
+    private PostAdapter laptopadapter;
+    private ArrayList<ProductLaptop> laptops = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +30,17 @@ public class RecyclerV extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.rvPosts);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new PostAdapter(products);
-        recyclerView.setAdapter(adapter);
+        laptopadapter = new PostAdapter(laptops);
+        recyclerView.setAdapter(laptopadapter);
 
         ApiClient apiClient = new ApiClient();
         apiClient.getProducts(new ApiCallback() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
-            public void onSuccess(ArrayList<ProductLaptop> productList) {
-                products.clear();
-                products.addAll(productList);
-                adapter.notifyDataSetChanged();
+            public void onComplete(ArrayList<ProductLaptop> productList) {
+                laptops.clear();
+                laptops.addAll(productList);
+                laptopadapter.notifyDataSetChanged();
             }
 
             @Override

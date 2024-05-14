@@ -1,11 +1,13 @@
 package com.cizer.tryretrofit.views.viewholder;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,9 +44,12 @@ public class Login extends AppCompatActivity {
                 // Retrieve text from EditText fields
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
-
-                // Perform login operation
-                ApiClient.loginUser(username,password,Login.this);
+                if(username.isEmpty() || password.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Please fill in the details", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Perform login operation
+                    ApiClient.loginUser(username,password,Login.this);
+                }
             }
         });
     }

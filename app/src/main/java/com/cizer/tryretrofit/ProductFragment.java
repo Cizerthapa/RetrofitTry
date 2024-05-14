@@ -19,8 +19,8 @@ import java.util.ArrayList;
 public class ProductFragment extends Fragment {
 
         private RecyclerView recyclerView;
-        private PostAdapter adapter;
-        private ArrayList<ProductLaptop> products = new ArrayList<>();
+        private PostAdapter laptopadapter;
+        private ArrayList<ProductLaptop> laptops = new ArrayList<>();
 
         public ProductFragment() {
             // Required empty public constructor
@@ -33,17 +33,17 @@ public class ProductFragment extends Fragment {
 
             recyclerView = view.findViewById(R.id.rvPosts);
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-            adapter = new PostAdapter(products);
-            recyclerView.setAdapter(adapter);
+            laptopadapter = new PostAdapter(laptops);
+            recyclerView.setAdapter(laptopadapter);
 
-            // Fetch products from API
+            // Fetch laptops from API
             ApiClient apiClient = new ApiClient();
             apiClient.getProducts(new ApiCallback() {
                 @Override
-                public void onSuccess(ArrayList<ProductLaptop> productList) {
-                    products.clear();
-                    products.addAll(productList);
-                    adapter.notifyDataSetChanged();
+                public void onComplete(ArrayList<ProductLaptop> productList) {
+                    laptops.clear();
+                    laptops.addAll(productList);
+                    laptopadapter.notifyDataSetChanged();
                 }
 
                 @Override

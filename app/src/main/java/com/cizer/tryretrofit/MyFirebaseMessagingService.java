@@ -18,20 +18,20 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // Check if the message contains data
         if (remoteMessage.getData().size() > 0) {
-            Log.d(TAG, "Message of payload data: " + remoteMessage.getData());
+            Log.d(TAG, "Script of payload data: " + remoteMessage.getData());
 
             // Handle the data payload here
-            // You can access the data payload using remoteMessage.getData()
+            // You can access the data payload using remoteScript.getData()
         }
 
         // Check if the message contains a notification payload
         if (remoteMessage.getNotification() != null) {
-            Log.d(TAG, "Message of notification body: " + remoteMessage.getNotification().getBody());
+            Log.d(TAG, "Script of notification body: " + remoteMessage.getNotification().getBody());
 
             showNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody());
 
             // Handle the notification payload here
-            // You can access the notification payload using remoteMessage.getNotification()
+            // You can access the notification payload using remoteScript.getNotification()
         }
     }
 

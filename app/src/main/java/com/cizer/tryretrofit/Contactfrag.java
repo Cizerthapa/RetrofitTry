@@ -94,12 +94,12 @@ public class Contactfrag extends Fragment {
                 // For example, you can log the values
                 Log.d("EditTextValues", "Name: " + name);
                 Log.d("EditTextValues", "Email: " + email);
-                Log.d("EditTextValues", "Message: " + message);
+                Log.d("EditTextValues", "Script: " + message);
 
                 // Create an instance of ApiClient
                 ApiClient apiClient = new ApiClient();
 
-                // Call the sendMessage method on the ApiClient instance
+                // Call the sendScript method on the ApiClient instance
                 apiClient.sendMessage(name, email, message, getContext());
 
             }
